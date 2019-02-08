@@ -6,7 +6,7 @@
 #    By: zweng <zweng@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/04 13:07:55 by zweng             #+#    #+#              #
-#    Updated: 2019/02/04 15:11:39 by zweng            ###   ########.fr        #
+#    Updated: 2019/02/08 16:04:02 by zweng            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,10 @@ MLXLIB 			= libmlx.a
 HEADER 			= ft_mlx.h fractol.h
 HEADERSP 		= -I$(HEADER_PATH) -I$(MLX_PATH) -I$(LIBFT_PATH)/$(HEADER_PATH)
 LIBSP 			= -L$(LIBFT_PATH) -L$(MLX_PATH)
-LIBS 			= -lft -lmlx -lm
+LIBS 			= -lft -lmlx -lm -fsanitize=address
 FRAMEWORK 		= -framework OpenGL -framework AppKit
 
-SRC_NAME		= main.c
+SRC_NAME		= main.c tools.c ft_draw.c ft_event.c
 
 OBJ_PATH 		=  obj
 OBJ_NAME 		=  $(SRC_NAME:.c=.o)
