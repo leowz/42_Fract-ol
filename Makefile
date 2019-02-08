@@ -6,7 +6,7 @@
 #    By: zweng <zweng@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/04 13:07:55 by zweng             #+#    #+#              #
-#    Updated: 2019/02/08 16:04:02 by zweng            ###   ########.fr        #
+#    Updated: 2019/02/08 17:17:45 by zweng            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,8 @@ clean:
 
 fclean: clean
 	@/bin/rm -f $(NAME)
+	@make -C $(LIBFT_PATH)/ fclean
+	@make -C $(MLX_PATH)/ clean
 	@printf $(GREEN)"$(NAME) fclean\n"$(EOC)
 
 re: fclean all
