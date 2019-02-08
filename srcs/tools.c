@@ -6,7 +6,7 @@
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 11:55:34 by zweng             #+#    #+#             */
-/*   Updated: 2019/02/08 12:38:59 by zweng            ###   ########.fr       */
+/*   Updated: 2019/02/08 17:43:03 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void    ft_mlx_putstr(t_env *env, const char *str, int x, int y)
 void	ft_mlx_putpxl(t_env *env, int x, int y, int color)
 {
     t_image *img;
+
     if (!env)
         return ;
 	if (x <= 0 || x >= env->win_width || y <= 0 || y >= env->win_height)

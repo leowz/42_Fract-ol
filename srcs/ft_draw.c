@@ -6,7 +6,7 @@
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 11:22:49 by zweng             #+#    #+#             */
-/*   Updated: 2019/02/08 16:22:08 by zweng            ###   ########.fr       */
+/*   Updated: 2019/02/08 17:42:31 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ void    ft_draw(t_env *env)
         }
         i_x++;
     }
+    mlx_clear_window(env->mlx, env->win);
     mlx_put_image_to_window(env->mlx, env->win, env->image.img_ptr, 0, 0);
 }

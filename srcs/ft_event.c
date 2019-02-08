@@ -6,27 +6,27 @@
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/08 12:41:58 by zweng             #+#    #+#             */
-/*   Updated: 2019/02/08 16:33:08 by zweng            ###   ########.fr       */
+/*   Updated: 2019/02/08 17:32:24 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include "mlx_keycode.h"
 
-/*int		hook_mousedown(int button, int x, int y, t_env *env)
+int		hook_mousedown(int button, int x, int y, t_env *env)
 {
 	if (x < 0 || y < 0 || x > env->win_width || y > env->win_height)
-		return (FALSE);
+		return (0);
 	if (button == BUT1_KEY || button == BUT2_KEY)
 		mlx->mouse.isdown = button;
 	if (button == SCROLLUP_KEY)
 	{
-		mlx->cam.scale += 2;
+		env->zoom += 2;
 		if (mlx->cam.scale > (MAX_SCALE * mlx->cam.def_scale))
 			mlx->cam.scale = (MAX_SCALE * mlx->cam.def_scale);
 		else
 			fx_render(mlx);
-		return (FALSE);
+		return (0);
 	}
 	if (button == SCROLLDOWN_KEY)
 	{
@@ -35,10 +35,10 @@
 			mlx->cam.scale = 2;
 		else
 			fx_render(mlx);
-		return (FALSE);
+		return (0);
 	}
-	return (FALSE);
-}*/
+	return (0);
+}
 
 /*int		hook_mouseup(int button, int x, int y, t_mlx_data *mlx)
 {
