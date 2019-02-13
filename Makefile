@@ -6,7 +6,7 @@
 #    By: zweng <zweng@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/04 13:07:55 by zweng             #+#    #+#              #
-#    Updated: 2019/02/08 17:17:45 by zweng            ###   ########.fr        #
+#    Updated: 2019/02/12 19:01:45 by zweng            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ MLX_PATH        = minilibx
 LIB 			= libft.a
 MLXLIB 			= libmlx.a
 
-HEADER 			= ft_mlx.h fractol.h
+HEADER 			= fractol.h
 HEADERSP 		= -I$(HEADER_PATH) -I$(MLX_PATH) -I$(LIBFT_PATH)/$(HEADER_PATH)
 LIBSP 			= -L$(LIBFT_PATH) -L$(MLX_PATH)
 LIBS 			= -lft -lmlx -lm -fsanitize=address
@@ -57,7 +57,7 @@ $(NAME): $(OBJS) $(LIBFT_PATH)/$(LIB) $(MLX_PATH)/$(MLXLIB)
 	@$(CC) $(OBJS) $(HEADERSP) $(LIBSP) $(LIBS) $(FRAMEWORK) -o $@
 	@printf $(GREEN)"$(NAME) Finish linking\n"$(EOC)
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HEADER_PATH)/$(HEADER)| $(OBJ_PATH)
 	@$(CC) $(CFLAGS) $(CPPFLAGS) $(HEADERSP) -o $@ -c $<
 	@printf $(GREEN)"compiling %s\n"$(GREEN) $<
 

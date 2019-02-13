@@ -6,7 +6,7 @@
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 14:42:09 by zweng             #+#    #+#             */
-/*   Updated: 2019/02/08 16:03:43 by zweng            ###   ########.fr       */
+/*   Updated: 2019/02/12 19:05:26 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ static void init_env(t_env  *env)
     env->win = mlx_new_window(env->mlx, 1000,  1000, "Fract'ol");
     env->win_width = 1000;
     env->win_height = 1000;
+    env->zoom = 4.0;
+    env->centerX = 0.0;
+    env->centerY = 0.0;
     image = &(env->image);
     image->img_ptr = mlx_new_image(env->mlx, 1000, 1000);
     image->buf_ptr = mlx_get_data_addr(image->img_ptr, &(image->bpp),
