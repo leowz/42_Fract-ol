@@ -6,7 +6,7 @@
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 14:43:31 by zweng             #+#    #+#             */
-/*   Updated: 2019/02/13 18:13:22 by zweng            ###   ########.fr       */
+/*   Updated: 2019/02/15 17:41:54 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTOL_H
 
 # include <math.h>
+# include <pthread.h>
 # include "ft_mlx.h"
 # include "libft.h"
 # include "ft_printf.h"
@@ -41,6 +42,12 @@ typedef struct  s_env
     void        *mlx;
 	void        *win;
 }               t_env;
+
+typedef struct   s_mt
+{
+    t_env       *env;
+    int         zone;
+}               t_mt;
 
 void            ft_draw(t_env *env);
 void            ft_mlx_putstr(t_env *env, const char *str, int x, int y);
