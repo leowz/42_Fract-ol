@@ -6,7 +6,7 @@
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 11:55:34 by zweng             #+#    #+#             */
-/*   Updated: 2019/02/13 18:26:36 by zweng            ###   ########.fr       */
+/*   Updated: 2019/02/17 22:43:36 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	ft_mlx_putpxl(t_env *env, int x, int y, int color)
 	*((int *)(img->buf_ptr + ((x + y * env->win_width) * img->bpp))) = color;
 }
 
-double  ft_change_coordinateX(t_env *env, int pos)
+t_data  ft_change_coordinateX(t_env *env, int pos)
 {
-    double  ret;
+    t_data  ret;
 
     if (!env || pos < 0 || pos > env->win_width || pos > env->win_height)
         return (0.0);
@@ -41,9 +41,9 @@ double  ft_change_coordinateX(t_env *env, int pos)
     return (ret);
 }
 
-double  ft_change_coordinateY(t_env *env, int pos)
+t_data  ft_change_coordinateY(t_env *env, int pos)
 {
-    double  ret;
+    t_data  ret;
 
     if (!env || pos < 0 || pos > env->win_width || pos > env->win_height)
         return (0.0);
