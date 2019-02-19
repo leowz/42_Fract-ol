@@ -6,7 +6,7 @@
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 14:42:09 by zweng             #+#    #+#             */
-/*   Updated: 2019/02/12 19:05:26 by zweng            ###   ########.fr       */
+/*   Updated: 2019/02/19 12:17:42 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static int  init_fractal(t_env *env, const char *fractal)
         env->fractal = 1;
     else if (fractal && !(ft_strcmp(fractal, "julia")))
         env->fractal = 2;
+    else if (fractal && !(ft_strcmp(fractal, "burningship")))
+        env->fractal = 3;
     else
         return (FALSE);
     return (TRUE);

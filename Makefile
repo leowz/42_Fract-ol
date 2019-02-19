@@ -6,7 +6,7 @@
 #    By: zweng <zweng@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/04 13:07:55 by zweng             #+#    #+#              #
-#    Updated: 2019/02/15 17:13:36 by zweng            ###   ########.fr        #
+#    Updated: 2019/02/19 12:16:22 by zweng            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ LIBSP 			= -L$(LIBFT_PATH) -L$(MLX_PATH)
 LIBS 			= -lft -lmlx -lm -fsanitize=address -pthread
 FRAMEWORK 		= -framework OpenGL -framework AppKit
 
-SRC_NAME		= main.c tools.c ft_draw.c ft_event.c
+SRC_NAME		= main.c tools.c ft_draw.c ft_event.c ft_fractal.c
 
 OBJ_PATH 		=  obj
 OBJ_NAME 		=  $(SRC_NAME:.c=.o)

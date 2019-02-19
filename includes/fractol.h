@@ -6,7 +6,7 @@
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 14:43:31 by zweng             #+#    #+#             */
-/*   Updated: 2019/02/17 22:43:13 by zweng            ###   ########.fr       */
+/*   Updated: 2019/02/19 12:13:06 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,7 @@ void	            ft_mlx_putpxl(t_env *env, int x, int y, int color);
 void                ft_event(t_env *e);
 t_data              ft_change_coordinateX(t_env *env, int pos);
 t_data              ft_change_coordinateY(t_env *env, int pos);
+void                draw_mandelbrot(t_env *env, int pos_x, int pos_y);
+void                draw_julia(t_env *env, int pos_x, int pos_y);
+void                draw_burningship(t_env *env, int pos_x, int pos_y);
 #endif
