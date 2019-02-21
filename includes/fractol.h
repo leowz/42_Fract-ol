@@ -6,7 +6,7 @@
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 14:43:31 by zweng             #+#    #+#             */
-/*   Updated: 2019/02/19 18:51:03 by zweng            ###   ########.fr       */
+/*   Updated: 2019/02/21 16:04:09 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "ft_mlx.h"
 # include "libft.h"
 # include "ft_printf.h"
+# define ZOOM_MIN   (0.000001)
 
 typedef long double t_data;
 
@@ -32,6 +33,7 @@ typedef struct      s_mouse
 
 typedef struct      s_env
 {
+    int             iter;
     t_data          centerX;
     t_data          centerY;
     int             win_width;

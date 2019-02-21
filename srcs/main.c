@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/19 18:45:04 by zweng             #+#    #+#             */
-/*   Updated: 2019/02/19 18:46:29 by zweng            ###   ########.fr       */
-/*                                                                            */
+/*																			  */
+/*														  :::	   ::::::::   */
+/*	 main.c												:+:		 :+:	:+:   */
+/*													  +:+ +:+		  +:+	  */
+/*	 By: zweng <zweng@student.42.fr>				+#+  +:+	   +#+		  */
+/*												  +#+#+#+#+#+	+#+			  */
+/*	 Created: 2019/02/19 18:45:04 by zweng			   #+#	  #+#			  */
+/*	 Updated: 2019/02/21 15:42:33 by zweng			  ###	########.fr		  */
+/*																			  */
 /* ************************************************************************** */
 
 #include "fractol.h"
@@ -36,6 +36,7 @@ static void	init_env(t_env *env)
 	env->zoom = 4.0;
 	env->centerX = 0.0;
 	env->centerY = 0.0;
+	env->iter = 80;
 	image = &(env->image);
 	image->img_ptr = mlx_new_image(env->mlx, 1000, 1000);
 	image->buf_ptr = mlx_get_data_addr(image->img_ptr, &(image->bpp),
