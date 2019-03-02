@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*																			  */
-/*														  :::	   ::::::::   */
-/*	 ft_draw.c											:+:		 :+:	:+:   */
-/*													  +:+ +:+		  +:+	  */
-/*	 By: zweng <zweng@student.42.fr>				+#+  +:+	   +#+		  */
-/*												  +#+#+#+#+#+	+#+			  */
-/*	 Created: 2019/02/06 11:22:49 by zweng			   #+#	  #+#			  */
-/*	 Updated: 2019/02/19 18:52:05 by zweng			  ###	########.fr		  */
-/*																			  */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_draw.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/02 14:50:56 by zweng             #+#    #+#             */
+/*   Updated: 2019/03/02 14:53:01 by zweng            ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
@@ -15,14 +15,14 @@
 static void	init_1(t_mt *mt, int *i, int *l)
 {
 	if (mt->zone < 2)
-	{		
+	{
 		i[1] = 0;
 		l[1] = mt->env->win_height / 2;
 	}
 	else
 	{
 		i[1] = mt->env->win_height / 2;
-		l[1] = mt->env->win_height; 
+		l[1] = mt->env->win_height;
 	}
 }
 
@@ -30,17 +30,17 @@ static void	init_2(t_mt *mt, int *i, int *l)
 {
 	if (mt->zone % 2)
 	{
-		i[0] = mt->env->win_width / 2;	
+		i[0] = mt->env->win_width / 2;
 		l[0] = mt->env->win_width;
 	}
 	else
-	{	
+	{
 		i[0] = 0;
 		l[0] = mt->env->win_width / 2;
 	}
 }
 
-void	*ft_mt(void *arg)
+void		*ft_mt(void *arg)
 {
 	int		i[2];
 	int		l[2];
@@ -54,10 +54,10 @@ void	*ft_mt(void *arg)
 		while (i[0] < l[0])
 		{
 			if (mt->env->fractal == 1)
-				draw_mandelbrot(mt->env, i[0] , i[1]);
-			else if(mt->env->fractal == 2)
+				draw_mandelbrot(mt->env, i[0], i[1]);
+			else if (mt->env->fractal == 2)
 				draw_julia(mt->env, i[0], i[1]);
-			else if(mt->env->fractal == 3)
+			else if (mt->env->fractal == 3)
 				draw_burningship(mt->env, i[0], i[1]);
 			i[0]++;
 		}
@@ -66,7 +66,7 @@ void	*ft_mt(void *arg)
 	return (NULL);
 }
 
-void	ft_draw(t_env *env)
+void		ft_draw(t_env *env)
 {
 	pthread_t	thread_id[4];
 	t_mt		mt[4];

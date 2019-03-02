@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*																			  */
-/*														  :::	   ::::::::   */
-/*	 main.c												:+:		 :+:	:+:   */
-/*													  +:+ +:+		  +:+	  */
-/*	 By: zweng <zweng@student.42.fr>				+#+  +:+	   +#+		  */
-/*												  +#+#+#+#+#+	+#+			  */
-/*	 Created: 2019/02/19 18:45:04 by zweng			   #+#	  #+#			  */
-/*	 Updated: 2019/02/21 15:42:33 by zweng			  ###	########.fr		  */
-/*																			  */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/02 15:10:26 by zweng             #+#    #+#             */
+/*   Updated: 2019/03/02 15:10:28 by zweng            ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
@@ -34,8 +34,9 @@ static void	init_env(t_env *env)
 	env->win_width = 1000;
 	env->win_height = 1000;
 	env->zoom = 4.0;
-	env->centerX = 0.0;
-	env->centerY = 0.0;
+	env->zoom_rate = 1.5;
+	env->center_x = 0.0;
+	env->center_y = 0.0;
 	env->iter = 80;
 	image = &(env->image);
 	image->img_ptr = mlx_new_image(env->mlx, 1000, 1000);
@@ -46,7 +47,7 @@ static void	init_env(t_env *env)
 
 static void	print_usage(void)
 {
-	ft_printf("usage: fractol [ mandelbrot | julia ]\n");
+	ft_printf("usage: fractol [ mandelbrot | julia | burningship ]\n");
 }
 
 int			main(int ac, char **av)
